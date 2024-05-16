@@ -68,8 +68,8 @@
         <input type="number" id="yogurt_to_butter">
         <label for="butter_to_milk">Conversion rate from Butter to Milk:</label>
         <input type="number" id="butter_to_milk">
-        <label for="days">Number of Days:</label>
-        <input type="number" id="days">
+        <label for="bacteria">Number of bacteria required:</label>
+        <input type="number" id="bacteria">
         <button onclick="calculate()">Calculate</button>
         <div class="result" id="result"></div>
     </div>
@@ -87,11 +87,11 @@
             let milk_to_yogurt = parseFloat(document.getElementById("milk_to_yogurt").value);
             let yogurt_to_butter = parseFloat(document.getElementById("yogurt_to_butter").value);
             let butter_to_milk = parseFloat(document.getElementById("butter_to_milk").value);
-            let days = parseInt(document.getElementById("days").value);
+            let bacteria = parseInt(document.getElementById("bacteria").value);
             let resultElement = document.getElementById("result");
 
             let finalMilk = initialMilk;
-            for (let day = 1; day <= days; day++) {
+            for (let day = 1; day <= bacteria; day++) {
                 finalMilk = fermentation(finalMilk, milk_to_yogurt, yogurt_to_butter, butter_to_milk);
             }
 
@@ -103,7 +103,7 @@
             document.getElementById("milk_to_yogurt").value = "";
             document.getElementById("yogurt_to_butter").value = "";
             document.getElementById("butter_to_milk").value = "";
-            document.getElementById("days").value = "";
+            document.getElementById("bacteria").value = "";
         }
     </script>
 </body>
